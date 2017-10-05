@@ -1,0 +1,14 @@
+<div class="cc">
+    <small [@fade]="fadeState" class="low-balance" [hidden]="!checkLowBalance()" > {{'ALERT_LOWBALANCE'|translate}}</small>
+    <br />
+    <span class="cc-balance">{{card.balance | currency:card.currency:true:'1.2-2'}}</span>
+    
+    <span class="novo-masterCard">
+        <img src="assets/svg/logo-visa.svg" alt="">
+    </span>
+
+    <span class="cc-number">{{card.noTarjetaConMascara}}</span>
+    <span class="cc-date expedition">01/14</span>
+    <span class="cc-date expiry">01/99</span>
+    <span class="cc-name">{{card.nom_plastico}}</span>
+</div> 

@@ -1,0 +1,33 @@
+
+page-dashboard-popover {
+    $dark:#005194;
+    $text:#ffffff;
+    $popover-md-border-radius:0px;
+    
+
+    .custom-icon{
+        color: $dark;
+        font-size: 10;
+    }
+
+    .popover-header{
+     background-color:$dark;
+     color:$text;
+     border: none;
+    }
+
+
+    .popover-logout{
+    text-align: center
+    }
+
+    .novo-popover{
+        border: none;
+        height: 100%;
+    }
+    .popover-icon{
+        font-size: 35px;
+    }
+
+}
+

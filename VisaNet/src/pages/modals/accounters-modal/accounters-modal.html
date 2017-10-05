@@ -1,0 +1,72 @@
+<!--
+  Generated template for the AccountersModal page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <button ion-button icon-only menuToggle (click)="close()">
+      <ion-icon color="yellow" ios="ios-close" md="md-close"></ion-icon>
+    </button>
+    <ion-title>{{'HEADER_TRANSFER'|translate}}</ion-title>
+
+    <ion-buttons end>
+      <button color="yellow" ion-button (click)="close(selectedAccounter,amount) ">
+        {{'BUTTON_DONE'|translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="dark">
+      <ion-searchbar
+          [(ngModel)]="filterVal"
+          [showCancelButton]="true"
+          (ionInput)="filterDestinies(filterVal)"
+          (ionCancel)="cancelFiltering($event)">
+
+      </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-item-group>
+      <ion-item-divider color="light">{{'LABEL_AMOUNT'|translate}}</ion-item-divider>
+      <ion-item>
+        <ion-label color="primary">$</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" placeholder="{{'INPUT_AMOUNT'|translate}}"></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+
+
+    <ion-item-group>
+      <ion-item-divider color="light">{{'LABEL_DESTINY'|translate}}</ion-item-divider>
+      <ion-list>
+        <ion-item *ngFor="let accounter of accounters" (click)="select(accounter)">
+          <ion-icon color="primary" ios="ios-radio-button-off" md="md-radio-button-off" item-left *ngIf="!(isSelected(accounter))"></ion-icon>
+          <ion-icon color="primary" ios="ios-radio-button-on" md="md-radio-button-on" item-left *ngIf="isSelected(accounter)"></ion-icon>
+           <h2>Nombre: {{accounter.displayName}}</h2>
+           <p *ngIf="!transacctionType">Cuenta: {{accounter.account}}</p>
+           <p *ngIf="transacctionType">Teléfono: {{accounter.phone}}</p>
+        </ion-item>   
+             
+      </ion-list>
+      
+    </ion-item-group>
+ 
+    <ion-fab right bottom>
+      <button ion-fab color="dark" (click)="openAccountersPopover($event)" >
+           <ion-icon color="yellow" ios="ios-add" md="md-add"></ion-icon>
+      </button>
+   </ion-fab>
+
+
+
+
+</ion-content>
+
+

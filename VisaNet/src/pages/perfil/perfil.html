@@ -1,0 +1,99 @@
+<!--
+  Generated template for the Perfil page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="dark">
+    <ion-title>  {{userData.registro.user.primerNombre}}  {{userData.registro.user.primerApellido}}</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="save()">
+           <ion-icon  color="yellow" ios="ios-briefcase" md="md-briefcase"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  
+
+</ion-header>
+
+<ion-content>
+  <div [hidden]="!loading" text-center>
+    <ion-spinner  name="crescent"></ion-spinner>
+    <br />
+    {{'LABEL_LOADING'|translate}}
+  </div>
+
+
+          <div class="card-holder">
+              <div class="img-container">
+                  <div item-center class="avatar">
+                    {{letterAvatar}}
+                  </div>
+              </div>
+          </div>
+
+
+
+         <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_BIRTHDAY'|translate}}</ion-item-divider>
+            <ion-item>
+                 {{userData.registro.user.fechaNacimiento}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_PROFESSION'|translate}}</ion-item-divider>
+            <ion-item>
+                   {{userData.registro.user.profesion}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_PHONE'|translate}}</ion-item-divider>
+            <ion-item>
+                     {{userData.registro.user.telefono}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_ADDRESS'|translate}}</ion-item-divider>
+            <ion-item>
+                  {{userData.direccion.acDir}}, {{userData.direccion.acEstado}} {{userData.direccion.acPais}} 
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_EMAIL'|translate}}</ion-item-divider>
+            <ion-item>
+                {{userData.registro.user.email}}
+            </ion-item>
+        </ion-item-group>
+
+         <ion-item-group>
+            <ion-item-divider color="light">
+                {{'LABEL_NOTIFICATIONS'|translate}}
+                <button ion-button item-right color="dark" [hidden]="notiticationsState=='out'" (click)="changeNotifications()" >{{'BUTTON_YES'|translate}}</button>
+                <button ion-button item-right color="dark"  [hidden]="notiticationsState=='in'" (click)="changeNotifications()" outline>{{'BUTTON_NO'|translate}}</button>
+            </ion-item-divider>
+            <ion-item [@flyInOut]="notiticationsState">
+              <ion-label>{{'LABEL_GENERALNOTIFICATIONS'|translate}}</ion-label>
+              <ion-toggle [(ngModel)]="notifications" color="dark"></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group [@flyInOut]="notiticationsState">
+          <ion-item-divider color="light">{{'LABEL_LOWBALANCE'|translate}}</ion-item-divider>
+          <ion-item>
+              <ion-label color="primary">$</ion-label>
+              <ion-input type="text" [(ngModel)]="lowBalanceAmount" placeholder="{{'INPUT_LOWBALANCE'|translate}}"></ion-input>
+          </ion-item>
+        </ion-item-group>
+
+
+
+
+
+</ion-content>

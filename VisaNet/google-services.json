@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "294010081363",
+    "firebase_url": "https://mfs-cpo.firebaseio.com",
+    "project_id": "mfs-cpo",
+    "storage_bucket": "mfs-cpo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294010081363:android:065c131f552970c4",
+        "android_client_info": {
+          "package_name": "com.novo.cpo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294010081363-o723sf6hbgkr9e7rk0300ucge0k1p21n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUYSFiqgY56k70-Yd2OdT1u3QUFe9ffo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

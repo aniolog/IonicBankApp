@@ -1,0 +1,77 @@
+<ion-header no-border>
+  <ion-navbar color="dark">
+    <ion-title>{{'HEADER_DASHBOARD'|translate}}</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="goToNewsfeed()">
+            <ion-icon color="yellow" class="custom-icon" ios="ios-alert" md="md-alert"></ion-icon>
+      </button>
+      <button color="yellow" ion-button icon-only (click)="openPopover($event)">
+         <ion-icon color="yellow" ios="ios-more" md="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content >
+    <div class="card-holder">
+       
+        <ion-slides class="slides-height" #mySlider (ionDidChange)="onSlideChanged()" [options]="mySlideOptions">
+        <ion-slide *ngFor="let card of cards">
+            
+            <div class="cc ">
+                <card [card]="card"></card>
+            </div>
+            <br /><br />
+        </ion-slide>
+
+        </ion-slides>
+    </div>
+    <ion-item-divider color="light">
+        {{'LABEL_STATUS'|translate}}
+        <button ion-button item-right (click)="changeStatus()" color="primary" [hidden]="isBlocked" >{{'BUTTON_BLOCKCARD'|translate}}</button>
+        <button ion-button item-right (click)="changeStatus()" color="secondary"  [hidden]="!isBlocked" >{{'BUTTON_UNBLOCKCARD'|translate}}</button>
+    </ion-item-divider>
+   
+
+    <ion-item [hidden]="!loading" text-center>
+        <ion-spinner [hidden]="!loading" name="crescent"></ion-spinner>
+    </ion-item>
+     
+
+    <ion-list [hidden]="loading">
+
+
+        <ion-item>
+            <ion-label>{{'LABEL_MOVEMENTS'|translate}}</ion-label>
+            <ion-note item-right (click)="openFilterModal()" >
+                <strong><ion-icon color="yellow" ios="ios-funnel" md="md-funnel"></ion-icon></strong>
+            </ion-note>
+        </ion-item>
+
+        <ion-item  *ngFor="let movement of movements">
+            <ion-icon name="ios-arrow-round-down-outline" item-left *ngIf="movement.signo=='-'"></ion-icon>
+            <ion-icon name="ios-arrow-round-up-outline" item-left *ngIf="movement.signo=='+'"></ion-icon>
+            <h3>{{movement.concepto}}</h3>
+            <p>{{movement.balance | currency:'USD':true:'1.2-2' }}</p>
+            <p>{{movement.fecha | date}}</p>
+            <ion-note item-right *ngIf="movement.signo=='-'" class="outcome-swap">
+                {{movement.monto | currency:'USD':true:'1.2-2'}}
+            </ion-note>
+            <ion-note item-right *ngIf="movement.signo=='+'" class="income-swap">
+                {{movement.monto | currency:'USD':true:'1.2-2'}}
+            </ion-note>
+        </ion-item>
+
+
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab color="dark" (click)="goToTrans($event)" [disabled]="loading || !isBlocked">
+            <ion-icon color="yellow" ios="ios-swap"  md="md-swap" *ngIf="isBlocked"></ion-icon>
+             <ion-icon color="yellow" ios="ios-lock" md="md-lock" *ngIf="!isBlocked"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>

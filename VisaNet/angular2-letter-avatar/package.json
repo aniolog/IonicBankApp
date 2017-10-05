@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      "angular2-letter-avatar",
+      "/Users/carloslozano/Desktop/MFS-MOBILE/Pichincha"
+    ]
+  ],
+  "_from": "angular2-letter-avatar@*",
+  "_id": "angular2-letter-avatar@2.1.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular2-letter-avatar",
+  "_nodeVersion": "4.4.4",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/angular2-letter-avatar-2.1.1.tgz_1484746693515_0.24590650689788163"
+  },
+  "_npmUser": {
+    "email": "rajan.gunasekaran@ameexusa.com",
+    "name": "rajan-g"
+  },
+  "_npmVersion": "3.9.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular2-letter-avatar",
+    "raw": "angular2-letter-avatar",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-letter-avatar/-/angular2-letter-avatar-2.1.1.tgz",
+  "_shasum": "fbfa995c670a62e979489310f0541781973eb57c",
+  "_shrinkwrap": null,
+  "_spec": "angular2-letter-avatar",
+  "_where": "/Users/carloslozano/Desktop/MFS-MOBILE/Pichincha",
+  "author": {
+    "name": "Rajan G"
+  },
+  "bugs": {
+    "url": "https://github.com/rajan-g/angular2-letter-avatar/issues"
+  },
+  "dependencies": {},
+  "description": "letter avatar is angular2 directive. It will generate avatar based on given text",
+  "devDependencies": {
+    "@angular/common": "~2.1.1",
+    "@angular/compiler": "~2.1.1",
+    "@angular/core": "~2.1.1",
+    "@angular/forms": "~2.1.1",
+    "@angular/http": "~2.1.1",
+    "@angular/platform-browser": "~2.1.1",
+    "@angular/platform-browser-dynamic": "~2.1.1",
+    "@angular/router": "~3.1.1",
+    "@angular/upgrade": "~2.1.1",
+    "angular-in-memory-web-api": "~0.1.13",
+    "bootstrap": "^3.3.7",
+    "concurrently": "^2.0.0",
+    "core-js": "^2.4.1",
+    "lite-server": "^2.2.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.39",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "zone.js": "^0.6.25"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "fbfa995c670a62e979489310f0541781973eb57c",
+    "tarball": "https://registry.npmjs.org/angular2-letter-avatar/-/angular2-letter-avatar-2.1.1.tgz"
+  },
+  "gitHead": "a0b474427a5f199ed99e4a52b43a28123e11780b",
+  "homepage": "https://github.com/rajan-g/angular2-letter-avatar#readme",
+  "keywords": [
+    "angular2-avatar",
+    "letter-avatar",
+    "ng2-letter-avatar"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "rajan-g",
+      "email": "rajan.gunasekaran@ameexusa.com"
+    }
+  ],
+  "name": "angular2-letter-avatar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajan-g/angular2-letter-avatar.git"
+  },
+  "scripts": {
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
+  },
+  "version": "2.1.1"
+}

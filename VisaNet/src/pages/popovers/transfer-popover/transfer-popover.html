@@ -1,0 +1,30 @@
+<div>
+    <ion-list-header class="popover-header">
+      <ion-row>
+        <ion-col text-center>
+          <h2>{{"HEADER_TRANSFER"|translate}}</h2>
+        </ion-col>
+      </ion-row>
+    </ion-list-header>
+
+        <ion-col text-center>
+          <p>{{'LABEL_TRANSFER'|translate}}</p>
+        </ion-col>
+
+          <button class="popover-text-button popover-text-smaller item item-block"  detail-none="" ion-item="" tappable="" text-center (click)="openWidthdraw()">{{'LABEL_WIDTHDRAW'|translate}}</button>
+          
+          <br />
+
+          <button class="popover-text-button popover-text-smaller item item-block"  detail-none="" ion-item="" tappable="" text-center (click)="goToTrans(false)">{{'BUTTON_PLATATOPLATA'|translate}}</button>
+          
+          <br />
+
+          <button class="popover-text-button popover-text-smaller item item-block" class="popover-button" detail-none="" ion-item="" tappable="" text-center (click)="goToTrans(true)">{{'BUTTON_PLATATOBANKACC'|translate}}</button>
+          <br />
+
+          <button class="popover-text-button popover-text-smaller item item-block" class="popover-button" detail-none="" ion-item="" tappable="" text-center (click)="goToServices()">{{'BUTTON_PAYSERVICES'|translate}}</button>
+
+        
+        
+    
+</div>

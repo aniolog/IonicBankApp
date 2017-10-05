@@ -1,0 +1,70 @@
+  <ion-header no-border>
+
+  <ion-navbar color="dark" >
+    <button ion-button icon-only menuToggle (click)="close()">
+      <ion-icon color="yellow" ios="ios-close" md="md-close"></ion-icon>
+    </button>
+    <ion-title>{{'HEADER_TRANSFER'|translate}}</ion-title>
+
+    <ion-buttons end>
+      <button color="yellow" ion-button (click)="save()">
+            {{'BUTTON_DONE'|translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div class="card-holder">
+    <div class="img-container">
+        <div item-center class="avatar">
+            {{letterAvatar}}
+        </div>
+    </div>
+  </div>
+ 
+ <div class=novo-popover>
+
+        <ion-item-group>
+            <ion-item-divider color="light">{{'LABEL_NAME'|translate}}</ion-item-divider>
+            <ion-item>
+                  <ion-input type="text" [(ngModel)]="contact.displayName" placeholder="{{'INPUT_NAME'|translate}}"  (input)="makeLetterAvatar()"></ion-input>
+            </ion-item>
+        </ion-item-group>
+
+     
+     <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_ACCOUNT'|translate}}</ion-item-divider>
+          <ion-item>
+                   <ion-input type="number" [(ngModel)]="contact.account" placeholder="{{'INPUT_ACCOUNT'|translate}}"></ion-input>
+          </ion-item>
+      </ion-item-group>
+     <ion-item-group>
+            <ion-item-divider color="light">{{'LABEL_EMAIL'|translate}}
+                                       <ion-icon item-right *ngIf="emailOptions.length>1" (click)="openEmailActionSheet()" i ios="ios-more" md="md-more"></ion-icon>
+            </ion-item-divider>
+            <ion-item>
+                   <ion-input type="email"  placeholder="{{'INPUT_EMAIL'|translate}}" [(ngModel)]="contact.email" ></ion-input>
+          </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+            <ion-item-divider color="light">{{'LABEL_PHONE'|translate}}
+                                            <ion-icon item-right *ngIf="phoneOptions.length>1"  (click)="openPhoneActionSheet()" ios="ios-more" md="md-more"></ion-icon>
+            </ion-item-divider>
+            <ion-item>
+                  <ion-input  [(ngModel)]="contact.phone"  placeholder="{{'INPUT_PHONE'|translate}}"></ion-input>
+            </ion-item>
+      </ion-item-group>
+     
+  </div>
+  <br />
+  <br />
+  <ion-fab right bottom>
+      <button ion-fab color="dark" (click)="findContact()" >
+            <ion-icon color="yellow" ios="ios-search" md="md-search"></ion-icon>
+      </button>
+   </ion-fab>
+
+
+ 
+</ion-content> 

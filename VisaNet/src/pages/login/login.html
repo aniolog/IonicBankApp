@@ -1,0 +1,43 @@
+
+<ion-content padding class="novo-background-login">
+  
+  <div class="logo-container forgot-password">
+      <img class="novo-logo" src="assets/logo.png" >
+  </div>
+
+
+  <div class="novo-login">
+
+
+
+    <div >
+      <ion-item class="novo-item-input">
+        <ion-label color="light"  floating>{{'LABEL_USERNAME'|translate}}</ion-label>
+        <ion-input color="light" [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <ion-item class="novo-item-input">
+        <ion-label color="light"   floating>{{'LABEL_PASSWORD'|translate}}</ion-label>
+        <ion-input color="light"   [(ngModel)]="password" type="password"></ion-input> 
+      </ion-item>
+      <br />
+      <button color="light"  ion-button full  (click)="login()">Ingresar</button>
+      <br />
+      <ion-row>
+        <a class="passowrd-recovery" class="forgot-password" (click)="passwordRecovery()">{{'LABEL_PASSWORD_RECOVERY'|translate}}</a>
+      </ion-row>
+  
+    </div>
+  
+
+  <!--<button ion-button full (click)="login()">Ingresar</button>-->
+
+  </div>
+
+  <ion-footer no-border>
+    <div class="novo-logo" style="margin-bottom: 10px; color: #333;">
+      <img src="assets/svg/novopayment.svg" alt="">
+    </div>
+  </ion-footer>
+</ion-content>
+

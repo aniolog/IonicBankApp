@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar color="dark" no-border>
+    <button ion-button icon-only menuToggle (click)="filter()">
+      <ion-icon color="yellow"  ios="ios-close" md="md-close"></ion-icon>
+    </button>
+    <ion-title >{{'HEADER_FILTER'|translate}}</ion-title>
+     <ion-buttons end>
+      <button ion-button color="yellow" (click)="filter()">
+        {{'BUTTON_DONE'|translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+        <ion-item-group>
+          <ion-item-divider color="light">
+            {{'LABEL_DATES'|translate}}
+            <button ion-button item-right color="dark" [hidden]="!options.recent" (click)="changeToRecent(false)" >{{'BUTTON_RECENT'|translate}}</button>
+            <button ion-button item-right color="dark"  [hidden]="options.recent" (click)="changeToRecent(true)" outline>{{'BUTTON_RECENT'|translate}}</button>
+          </ion-item-divider>
+
+           
+            <ion-item>
+                <ion-label>{{'LABEL_FROM'|translate}}</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [disabled]="options.recent" [(ngModel)]="options.from"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{'LABEL_TO'|translate}}</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [disabled]="options.recent" [(ngModel)]="options.to"></ion-datetime>
+            </ion-item>
+        </ion-item-group>
+        <ion-item-group>
+          <ion-item-divider color="light">{{'LABEL_TYPES'|translate}}</ion-item-divider>
+           <ion-item>
+              <ion-label>{{'LABEL_OUTCOME'|translate}}</ion-label>
+              <ion-checkbox color="yellow" [(ngModel)]="options.type.outcome"></ion-checkbox>
+            </ion-item>
+             <ion-item>
+              <ion-label>{{'LABEL_INCOME'|translate}}</ion-label>
+              <ion-checkbox color="yellow" [(ngModel)]="options.type.income"></ion-checkbox>
+            </ion-item>
+             <ion-item>
+              <ion-label>{{'LABEL_DEPOSIT'|translate}}</ion-label>
+              <ion-checkbox color="yellow" [(ngModel)]="options.type.deposit"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{'HEADER_PLATATOPLATA'|translate}}</ion-label>
+              <ion-checkbox color="yellow" [(ngModel)]="options.type.transfer"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{'LABEL_SERVICEPAY'|translate}}</ion-label>
+              <ion-checkbox color="yellow" [(ngModel)]="options.type.service"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+
+
+
+</ion-content>

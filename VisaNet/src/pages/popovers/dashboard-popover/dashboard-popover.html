@@ -1,0 +1,23 @@
+ <div >
+      <ion-list-header class="popover-header">
+        <ion-row (click)="openProfile()">
+          <ion-col width-25>
+            <ion-icon color="yellow" class="popover-icon" ios="ios-contact" md="md-contact"></ion-icon>
+          </ion-col>
+          <ion-col  width-75>
+            <h2>Jose Luis Olarte</h2>
+            <small>JOlarte</small>
+          </ion-col>
+        </ion-row>
+      </ion-list-header>
+      <ion-row text-center>
+        <ion-col >
+          <ion-item ion-item (click)="logout()" class="popover-logout">
+             <span>
+                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+               {{'LABEL_LOGOUT'|translate}}
+            </span>
+        </ion-item>
+        </ion-col>
+      </ion-row>  
+  </div>
